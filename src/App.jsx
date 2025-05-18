@@ -25,7 +25,20 @@ const posts = [
 
 function App() {
   return (
-    <div></div>
+    <div className="container">
+      <div className="row gy-4">
+        <div className="col-12">
+          <h1>React Blog Form</h1>
+        </div>
+        <div className="col-12">
+          <ul className="list-group">
+            {posts.map((post) => {
+              return <li key={post.id}>{post.title}</li>
+            })}
+          </ul>
+        </div>
+      </div>
+    </div>
   )
 }
 
