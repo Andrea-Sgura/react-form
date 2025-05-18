@@ -26,6 +26,10 @@ const posts = [
 function App() {
   const [newPost, setNewPost] = useState("");
 
+  const onHandleSubmit = (e) => {
+    e.preventDefault();
+  }
+
   return (
     <div className="container">
       <div className="row gy-4">
@@ -38,10 +42,10 @@ function App() {
               return <li className="list-group-item" key={post.id}>{post.title}</li>
             })}
           </ul>
-          <form action="">
+          <form onSubmit={onHandleSubmit}>
             <input type="text" placeholder="Nuovo post" className="form-control"
               onChange={(e) => { setNewPost(e.target.value) }} />
-            <button className="btn-btn-primary">Inserisci</button>
+            <button className="btn-btn-primary" >Inserisci</button>
           </form>
         </div>
       </div>
