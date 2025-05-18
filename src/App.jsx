@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const posts = [
+const blogPosts = [
   {
     id: 1,
     title: "Post 1",
@@ -25,9 +25,15 @@ const posts = [
 
 function App() {
   const [newPost, setNewPost] = useState("");
+  const [posts, setPosts] = useState(blogPosts);
 
   const onHandleSubmit = (e) => {
     e.preventDefault();
+
+    const object = {
+      id: posts[posts.length - 1].id + 1,
+      title: newPost
+    }
   }
 
   return (
