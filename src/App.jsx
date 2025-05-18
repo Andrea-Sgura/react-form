@@ -39,7 +39,8 @@ function App() {
             })}
           </ul>
           <form action="">
-            <input type="text" placeholder="Nuovo post" className="form-control" />
+            <input type="text" placeholder="Nuovo post" className="form-control"
+              onChange={(e) => { setNewPost(e.target.value) }} />
             <button className="btn-btn-primary">Inserisci</button>
           </form>
         </div>
