@@ -24,6 +24,8 @@ const posts = [
 ]
 
 function App() {
+  const [newPost, setNewPost] = useState("");
+
   return (
     <div className="container">
       <div className="row gy-4">
@@ -33,9 +35,13 @@ function App() {
         <div className="col-12">
           <ul className="list-group">
             {posts.map((post) => {
-              return <li key={post.id}>{post.title}</li>
+              return <li className="list-group-item" key={post.id}>{post.title}</li>
             })}
           </ul>
+          <form action="">
+            <input type="text" placeholder="Nuovo post" className="form-control" />
+            <button className="btn-btn-primary">Inserisci</button>
+          </form>
         </div>
       </div>
     </div>
